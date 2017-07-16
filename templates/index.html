@@ -6,69 +6,95 @@
 
 
   </head>
-
   <body>
   <h3>Name: Vinayak Tare</h3>
-  <h4>Student ID: </h4>
-  <img src="https://s3.amazonaws.com/********/Photo.jpg"/>
+  <h4>Student ID: 1001453869</h4>
+  <img src="**********/vin21-**********/Photo.jpg"/>
  <div class="container">
      {{ response }}
     <h1>Menu</h1>
-     <h1>Total Entries</h1>
-   <form id="upload_form" action="/total" method="POST" enctype="multipart/form-data">
-      <input type="submit" name="total" value="Show Total Entries" ><br>
-       Tota entries :    {{ count }} <br>
-   </form>
-   <h1>Upload a file</h1>
+     <hr>
+   <h3>Upload a file</h3>{{ uploaded }}
    <form id="upload_form" action="/upload" method="POST" enctype="multipart/form-data">
       <input type="file" name="file" accept="uploaded_files/*" multiple>
       <input type="submit" name="upload" value="Upload" >
 
    </form>
-   <form id="upload_form" action="/query" method="POST" enctype="multipart/form-data">
-      <input type="submit" name="query" value="query result" >
+   <hr>
+     <h1>Total Entries</h1>
+   <form id="upload_form" action="/total" method="POST" enctype="multipart/form-data">
+      <input type="submit" name="total" value="Show Total Entries" ><br>
+       Total entries :    {{ count }} <br>
+   </form>
+          <br><br><br>
+     <form id="upload_form" action="/surnameQuery" method="POST" enctype="multipart/form-data">
+      <input type="text" name="surname" placeholder="Enter surname ">
+      <input type="submit" name="total" value="RDS Query result" ><br>
 
    </form>
+               <br><br><br>
+     <form id="upload_form" action="/surnameQueryMem" method="POST" enctype="multipart/form-data">
+      <input type="text" name="surname" placeholder="Enter surname ">
+      <input type="submit" name="total" value="Memcache Query result" ><br>
+
+   </form>
+
+               <br><br><br>
+     <form id="upload_form" action="/query2" method="POST" enctype="multipart/form-data">
+      <input type="text" name="state" placeholder="Enter state ">
+         <input type="text" name="min" placeholder="Enter min height ">
+         <input type="text" name="max" placeholder="Enter max height ">
+      <input type="submit" name="total" value="Query result" ><br>
+
+   </form>
+               <br><br><br>
+     <form id="upload_form" action="/query2Mem" method="POST" enctype="multipart/form-data">
+      <input type="text" name="state" placeholder="Enter state ">
+         <input type="text" name="min" placeholder="Enter min height ">
+         <input type="text" name="max" placeholder="Enter max height ">
+      <input type="submit" name="total" value="Memcache Query result" ><br>
+
+   </form>
+
+     <br><br><br>
+     <form id="upload_form" action="/randomQuery_rds" method="POST" enctype="multipart/form-data">
+      <input type="text" name="num" placeholder="Enter number of queries ">
+
+               <input type="text" name="state" placeholder="Enter state ">
+         <input type="text" name="min" placeholder="Enter min height ">
+         <input type="text" name="max" placeholder="Enter max height ">
+      <input type="submit" name="total" value="RDS Query result" ><br>
+       RDS Time:    {{ rdsTime }} <br>
+   </form><br><br><br>
+     <form id="upload_form" action="/randomQuery_mem" method="POST" enctype="multipart/form-data">
+      <input type="text" name="num" placeholder="Enter number of queries ">
+               <input type="text" name="state" placeholder="Enter state ">
+         <input type="text" name="min" placeholder="Enter min height ">
+         <input type="text" name="max" placeholder="Enter max height ">
+      <input type="submit" name="total" value="Memcache Query result" ><br>
+       Memcache Time:    {{ memTime }} <br>
+   </form><br><br><br>
+     <form id="upload_form" action="/randomQuery_rdsTime" method="POST" enctype="multipart/form-data">
+      <input type="text" name="num" placeholder="Enter number of queries ">
+         <input type="text" name="limit" placeholder="Enter limit ">
+         <input type="text" name="timelimit" placeholder="Enter time limit ">
+      <input type="submit" name="total" value="RDS Query result" ><br>
+       RDS Time:    {{ rdsTimeTotal }} <br>{{ noOfQueries }}
+   </form><br><br><br>
+     <br><br><br>
+     <form id="upload_form" action="/randomQuery_memTime" method="POST" enctype="multipart/form-data">
+      <input type="text" name="num" placeholder="Enter number of queries ">
+         <input type="text" name="limit" placeholder="Enter limit ">
+         <input type="text" name="timelimit" placeholder="Enter time limit ">
+      <input type="submit" name="total" value="Memcache Query result" ><br>
+       Memcache Time:    {{ memTotalTime }} <br>{{ noOfMemQueries }}
+   </form>
+
      <br><br>
-     <form id="upload_form" action="/ageQuery" method="POST" enctype="multipart/form-data">
-         <input type="text" name="age" placeholder="Enter age ">
-         <input type="text" name="sex" placeholder="Enter sex ">
-         <input type="submit" name="query2" value="query result" >
+     <br>
+     {{ reslt }}
 
-   </form>
-     <br><br>
-          <br><br>
-     <form id="upload_form" action="/ageRangeQuery" method="POST" enctype="multipart/form-data">
-         <input type="text" name="minAge" placeholder="Enter min age ">
-         <input type="text" name="maxAge" placeholder="Enter Max age ">
-         <input type="submit" name="query2" value="query result" >
 
-   </form>
-     <br><br>
-               <br><br>
-     <form id="upload_form" action="/query4" method="POST" enctype="multipart/form-data">
-         <input type="text" name="lastname" placeholder="Enter last name ">
-
-         <input type="submit" name="query2" value="query result" >
-
-   </form>
-     <br><br>
-               <br><br>
-     <form id="upload_form" action="/fairRangeQuery" method="POST" enctype="multipart/form-data">
-         <input type="text" name="minfair" placeholder="Enter min range fair ">
-         <input type="text" name="maxfair" placeholder="Enter Max range fair ">
-         <input type="submit" name="query2" value="query result" >
-
-   </form>
-     <br><br>
-     <form id="upload_form" action="/latQuery" method="POST" enctype="multipart/form-data">
-         <input type="text" name="latR" placeholder="Enter latitude">Latitude range{{ latRange }}<br>
-         <input type="text" name="longiR" placeholder="Enter longitude">Longitude range {{ longRange }}
-         <input type="submit" name="query2" value="query result" >
-
-   </form>
-
-  </div>
- </body>
-
+ </div>
+</body>
 </html>
