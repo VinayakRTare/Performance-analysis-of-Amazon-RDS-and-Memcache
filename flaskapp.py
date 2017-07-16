@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 ACCESS_KEY_ID = '******************'
 ACCESS_SECRET_KEY = '*******************'
-BUCKET_NAME = 'vin21-bucket'
+BUCKET_NAME = 'vin21-*******'
 FILE_NAME = 'test.jpg';
 
 s3 = boto3.resource('s3', aws_access_key_id=ACCESS_KEY_ID,
@@ -36,7 +36,7 @@ def upload():
     file_name = file.filename
     tab_file = file_name.split('.')[0]
     content = file.read()
-    s3.Bucket('vin21-bucket').put_object(Key=file_name, Body=content)
+    s3.Bucket('vin21-*******').put_object(Key=file_name, Body=content)
     droptablequery = 'DROP TABLE boat'
     cur.execute(droptablequery)
     createTableQuery = 'create table boat (pclass int(10),survived int(10),name text,sex text,age double,ticket int,fair double,cabin text,homedest text)'
