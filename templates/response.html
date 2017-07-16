@@ -5,38 +5,29 @@
     <title>Title</title>
 </head>
 <body>
-<p>Response</p>
-      <p> sql time                 Memcache time </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+ <div class="container">
+      <h1>results</h1>
+ No of results{{ count }}  <br><br>
+     Time taken RDS    {{ rdsTime }} <br><br>
+ Time taken Memcache    {{ memTime }}
+ <br>
+      <p> file name &nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Content      </p>
+
         {% for tmp in files %}
-      <p>{{ tmp.tt1 }}         {{ tmp.tt2 }}</p>
+      <p>{{ tmp.num}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ tmp.res }}</p>
         {% endfor %}
-        {% for tmp in response %}
-      <p>{{ tmp.place}}  </p>
-        {% endfor %}
-<h1>age query</h1>
-        {% for tmp in names %}
-      <p>{{ tmp.get('name')}} </p>
-        {% endfor %}
-Number of people : {{ cnt }}
-<br><br>
-<h1>Survivor names</h1>
-        {% for tmp in srNames %}
-      <p>{{ tmp.get('name')}} </p>
-        {% endfor %}
+  </div>
+ <br><form action="/indexPage" method="post"><input type="Submit" value="Go to Home"></form>
 
-<h1>Last  names</h1>
-        {% for tmp in likeQ %}
-      <p>{{ tmp}}  </p>
-        {% endfor %}
-
-<h1>fair ranges</h1>
-        {% for tmp in fairRange %}
-      <p>{{ tmp}}  </p>
-        {% endfor %}
-{{ slc }}
-{{ srNames }}
-{{ calPlace}}
-{{ places }}
-<form action="../"><input type="Submit" value="Go to Home"></form>
+</body>
+</html>
 </body>
 </html>
