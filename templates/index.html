@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>My Cloud</title>
+
+
+  </head>
+
+  <body>
+  <h3>Name: Vinayak Tare</h3>
+  <h4>Student ID: 1001453869</h4>
+  <img src="https://s3.amazonaws.com/vin21-bucket/Photo.jpg"/>
+ <div class="container">
+     {{ response }}
+    <h1>Menu</h1>
+     <h1>Total Entries</h1>
+   <form id="upload_form" action="/total" method="POST" enctype="multipart/form-data">
+      <input type="submit" name="total" value="Show Total Entries" ><br>
+       Tota entries :    {{ count }} <br>
+   </form>
+   <h1>Upload a file</h1>
+   <form id="upload_form" action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept="uploaded_files/*" multiple>
+      <input type="submit" name="upload" value="Upload" >
+
+   </form>
+   <form id="upload_form" action="/query" method="POST" enctype="multipart/form-data">
+      <input type="submit" name="query" value="query result" >
+
+   </form>
+     <br><br>
+     <form id="upload_form" action="/ageQuery" method="POST" enctype="multipart/form-data">
+         <input type="text" name="age" placeholder="Enter age ">
+         <input type="text" name="sex" placeholder="Enter sex ">
+         <input type="submit" name="query2" value="query result" >
+
+   </form>
+     <br><br>
+          <br><br>
+     <form id="upload_form" action="/ageRangeQuery" method="POST" enctype="multipart/form-data">
+         <input type="text" name="minAge" placeholder="Enter min age ">
+         <input type="text" name="maxAge" placeholder="Enter Max age ">
+         <input type="submit" name="query2" value="query result" >
+
+   </form>
+     <br><br>
+               <br><br>
+     <form id="upload_form" action="/query4" method="POST" enctype="multipart/form-data">
+         <input type="text" name="lastname" placeholder="Enter last name ">
+
+         <input type="submit" name="query2" value="query result" >
+
+   </form>
+     <br><br>
+               <br><br>
+     <form id="upload_form" action="/fairRangeQuery" method="POST" enctype="multipart/form-data">
+         <input type="text" name="minfair" placeholder="Enter min range fair ">
+         <input type="text" name="maxfair" placeholder="Enter Max range fair ">
+         <input type="submit" name="query2" value="query result" >
+
+   </form>
+     <br><br>
+     <form id="upload_form" action="/latQuery" method="POST" enctype="multipart/form-data">
+         <input type="text" name="latR" placeholder="Enter latitude">Latitude range{{ latRange }}<br>
+         <input type="text" name="longiR" placeholder="Enter longitude">Longitude range {{ longRange }}
+         <input type="submit" name="query2" value="query result" >
+
+   </form>
+
+  </div>
+ </body>
+
+</html>
